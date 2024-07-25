@@ -35,6 +35,20 @@ let choosePokemon = {
     }
 };
 
-//Declare the statement
-let message = `${pokemon}! I choose you! Use ${attack}! It did ${damage}`
+function getRandomPokemon(team) {
+    //get all keys of the team object
+    const keys = Object.keys(team);
+    //Generate random index
+    const randomIndex = Math.floor(Math.random()*keys.length);
+    //Use random index to select a random choice
+    const randomChoice = team[keys[randomIndex]];
 
+    return randomChoice;
+}
+
+console.log(getRandomPokemon(choosePokemon.team))
+
+//Declare the statement
+/*
+let message = `${pokemon}! I choose you! Use ${attack}! It did ${damage}`
+*/
