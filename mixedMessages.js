@@ -48,13 +48,29 @@ function mixedMessages() {
         return randomChoice;
         };
 
-        //Get a random pokemon from the team
+         //Get a random pokemon from the team
         const randomPokemon = getRandomPokemon(choosePokemon.team);
         //createa  alessage that takes the randomChoice and passes it into a message
-        let message = `${randomPokemon.pokemon}! I choose you! Use ${randomPokemon.attack}!`;
+        let message = `${randomPokemon.pokemon}! I choose you! Use ${randomPokemon.attack}! ${randomPokemon.pokemon} is a ${randomPokemon.type} type pokemon`;
 
         //log message
         console.log(message)
+
+        if (randomPokemon.type === 'electric') {
+            return console.log('Electric types are strong against water types!');
+        } else if(randomPokemon.type === 'grass') {
+            return console.log('Grass types are strong against ground types!');
+        } else if(randomPokemon.type === 'water') {
+            return console.log('Water types are strong against fire types!');
+        } else if(randomPokemon.type === 'fire') {
+            return console.log('Fire types are strong against grass types!');
+        } else if(randomPokemon.type === 'ground') {
+            return console.log('Ground types are strong against electric types!');
+        } else {
+            console.log('No type')
+        }
+
+
 }
 
 mixedMessages();
